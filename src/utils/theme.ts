@@ -5,6 +5,16 @@ const theme = createMuiTheme({
     fontFamily: ['Roboto', 'sans-serif'].join(','),
     fontSize: 13,
   },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        a: {
+          textDecoration: 'none',
+          color: 'inherit',
+        },
+      },
+    },
+  },
 });
 
 export default theme;

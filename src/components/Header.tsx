@@ -9,6 +9,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import Toolbar from '@material-ui/core/Toolbar';
 import Logo from '../assets/logo.png';
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: '7px',
     },
     logo: {
-      height: '50px',
+      height: '61px',
       width: '100px',
       marginLeft: '15px',
       marginRight: '15px',
@@ -52,14 +53,9 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     link: {
-      marginRight: '15px',
       fontWeight: 500,
       minWidth: '100px',
-      '&:last-child': {
-        marginRight: 0,
-      },
       [theme.breakpoints.down('xs')]: {
-        marginRight: 0,
         flex: '100%',
         marginBottom: '15px',
       },
@@ -87,27 +83,43 @@ const Header: React.FC = () => {
         </Container>
       </Grid>
       <Grid container className={classes.headerBottom}>
-        <Container maxWidth='lg' className={classes.headerBottomContainer}>
-          <a href='_blank'>
+        <Container
+          maxWidth='lg'
+          className={classes.headerBottomContainer}
+          style={{ display: 'flex' }}
+        >
+          <Link to='/home'>
             <img className={classes.logo} src={Logo} alt='logo' />
-          </a>
+          </Link>
           <Toolbar className={classes.navigation}>
-            <Button
-              className={classes.link}
-              href='#'
-              variant='contained'
-              color='primary'
+            <Link
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+                marginRight: '15px',
+              }}
+              to='/home'
             >
-              Home
-            </Button>
-            <Button
-              className={classes.link}
-              href='#'
-              variant='contained'
-              color='primary'
+              <Button
+                className={classes.link}
+                variant='contained'
+                color='primary'
+              >
+                Home
+              </Button>
+            </Link>
+            <Link
+              style={{ color: 'inherit', textDecoration: 'none' }}
+              to='/rooms'
             >
-              Rooms
-            </Button>
+              <Button
+                className={classes.link}
+                variant='contained'
+                color='primary'
+              >
+                Rooms
+              </Button>
+            </Link>
           </Toolbar>
         </Container>
       </Grid>
