@@ -1,0 +1,100 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "price": 250,
+      "beds": 2,
+      "totalPeoples": 4,
+      "roomLevel": "medium",
+      "name": "Deluxe Room"
+    },
+    {
+      "id": 2,
+      "price": 150,
+      "beds": 1,
+      "totalPeoples": 2,
+      "roomLevel": "common",
+      "name": "Twin Room"
+    },
+    {
+      "id": 3,
+      "price": 300,
+      "beds": 2,
+      "totalPeoples": 5,
+      "roomLevel": "medium",
+      "name": "Double-Double"
+    },
+    {
+      "id": 1,
+      "price": 250,
+      "beds": 2,
+      "totalPeoples": 4,
+      "roomLevel": "common",
+      "name": "Hollywood Twin Room"
+    },
+    {
+      "id": 4,
+      "price": 450,
+      "beds": 3,
+      "totalPeoples": 6,
+      "roomLevel": "luxury",
+      "name": "Cabana"
+    },
+    {
+      "id": 5,
+      "price": 500,
+      "beds": 3,
+      "totalPeoples": 6,
+      "roomLevel": "luxury",
+      "name": "Sico"
+    },
+    {
+      "id": 6,
+      "price": 450,
+      "beds": 1,
+      "totalPeoples": 3,
+      "roomLevel": "luxury",
+      "name": "Suite"
+    },
+    {
+      "id": 7,
+      "price": 340,
+      "beds": 4,
+      "totalPeoples": 6,
+      "roomLevel": "medium",
+      "name": "Duplex Room"
+    },
+    {
+      "id": 8,
+      "price": 150,
+      "beds": 2,
+      "totalPeoples": 4,
+      "roomLevel": "common",
+      "name": "Double Room"
+    },
+    {
+      "id": 9,
+      "price": 180,
+      "beds": 2,
+      "totalPeoples": 4,
+      "roomLevel": "common",
+      "name": "Twin Double"
+    },
+    {
+      "id": 9,
+      "price": 120,
+      "beds": 1,
+      "totalPeoples": 2,
+      "roomLevel": "common",
+      "name": "Twin Double"
+    },
+    {
+      "id": 10,
+      "price": 560,
+      "beds": 3,
+      "totalPeoples": 6,
+      "roomLevel": "luxury",
+      "name": "Penthouse Suite"
+    }
+  ]
+}
