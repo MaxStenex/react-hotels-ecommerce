@@ -1,9 +1,8 @@
 import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography/Typography";
-import Avatar from "@material-ui/core/Avatar/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
+import { Slide } from "../";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,33 +15,12 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "relative",
       transition: "all .4s ease",
     },
-    slide: {
+    buttons: {
       display: "flex",
-      flexDirection: "column",
       justifyContent: "center",
-      backgroundColor: "#e8e8e8",
-      borderRadius: 20,
-      padding: 20,
-      textAlign: "center",
-      position: "relative",
-      flex: "0 0 48%",
-      marginRight: "4%",
-      "&:nth-child(2n)": {
-        marginRight: 0,
-      },
     },
-    avatar: {
-      left: "50%",
-      transform: "translate(-50%)",
-      textAlign: "center",
-      width: 70,
-      height: 70,
-      marginBottom: 15,
-    },
-    name: {
-      fontWeight: 700,
-      color: "#f6a716",
-      textShadow: "1px 1px  black",
+    button: {
+      fontSize: 29,
     },
   })
 );
@@ -65,80 +43,21 @@ const Slider = () => {
             }px`,
           }}
         >
-          <div className={classes.slide}>
-            <Avatar
-              className={classes.avatar}
-              alt="Remy Sharp"
-              src="https://i.ytimg.com/vi/Y5GLCBjHR8U/maxresdefault.jpg"
-            />
-            <Typography className={classes.name} variant="h5">
-              Test Name
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut
-              officia quam dicta quos maxime.
-            </Typography>
-          </div>
-          <div className={classes.slide}>
-            <Avatar
-              className={classes.avatar}
-              alt="Remy Sharp"
-              src="https://i.ytimg.com/vi/Y5GLCBjHR8U/maxresdefault.jpg"
-            />
-            <Typography className={classes.name} variant="h5">
-              Test Name
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut
-              officia quam dicta quos maxime.
-            </Typography>
-          </div>
-          <div className={classes.slide}>
-            <Avatar
-              className={classes.avatar}
-              alt="Remy Sharp"
-              src="https://i.ytimg.com/vi/Y5GLCBjHR8U/maxresdefault.jpg"
-            />
-            <Typography className={classes.name} variant="h5">
-              Test Name
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut
-              officia quam dicta quos maxime.
-            </Typography>
-          </div>
-          <div className={classes.slide}>
-            <Avatar
-              className={classes.avatar}
-              alt="Remy Sharp"
-              src="https://i.ytimg.com/vi/Y5GLCBjHR8U/maxresdefault.jpg"
-            />
-            <Typography className={classes.name} variant="h5">
-              Test Name
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut
-              officia quam dicta quos maxime.
-            </Typography>
-          </div>
+          <Slide
+            avatarURL="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1844&q=80"
+            title="Maxim"
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nisi perspiciatis iste ullam suscipit illum."
+          />
         </div>
       </div>
-      <div className="buttons">
+      <div className={classes.buttons}>
         <IconButton
           aria-label="delete"
           onClick={() => {
             setCurrentSlide(0);
           }}
         >
-          <RadioButtonCheckedIcon color="primary" />
-        </IconButton>
-        <IconButton
-          aria-label="delete"
-          onClick={() => {
-            setCurrentSlide(1);
-          }}
-        >
-          <RadioButtonCheckedIcon />
+          <RadioButtonCheckedIcon color="primary" className={classes.button} />
         </IconButton>
       </div>
     </>

@@ -5,6 +5,7 @@ import SpecialityBlock from "./Home/SpecialityBlock";
 import Footer from "./common/Footer";
 import Feedback from "./Home/Feedback";
 import Slider from "./Home/Slider";
+import Slide from "./Home/Slide";
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   Footer,
   Feedback,
   Slider,
+  Slide,
 };
