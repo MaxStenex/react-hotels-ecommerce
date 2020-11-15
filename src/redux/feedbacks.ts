@@ -1,4 +1,6 @@
 import { Feedback } from "../types";
+import { instance } from "./../utils/api";
+import { AppThunk } from "./index";
 
 const SET_FEEDBACKS = "feedbacks/SET_FEEDBACKS";
 
@@ -38,4 +40,13 @@ export const setFeedbacks = (
       feedbacks,
     },
   };
+};
+
+export const getFeedbacks = (): AppThunk => async (dispatch) => {
+  try {
+    const response = await instance.get("feedbacks");
+    dispatch(setFeedbacks(response.data));
+  } catch (err) {
+    console.log(err);
+  }
 };

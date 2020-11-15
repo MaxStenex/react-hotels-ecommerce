@@ -1,8 +1,9 @@
-import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
+import React from "react";
 import { Slide } from "../";
+import { Feedback } from "../../types";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,40 +26,75 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Slider = () => {
+type Props = {
+  feedbacks: Array<Feedback>;
+};
+
+const Slider: React.FC<Props> = ({ feedbacks }) => {
   const classes = useStyles();
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const slider = React.useRef<HTMLDivElement>(null);
+  const sliderRef = React.useRef<HTMLDivElement>(null);
+  const [slidesOnPage, setSlidesOnPage] = React.useState(2);
+  const buttons = Array(feedbacks.length / slidesOnPage);
+
+  React.useEffect(() => {
+    const onResize = (evt: any) => {
+      setCurrentSlide(0);
+      if (window.innerWidth <= 600) {
+        return setSlidesOnPage(1);
+      }
+      setSlidesOnPage(2);
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, [slidesOnPage]);
 
   return (
     <>
       <div className={classes.slider}>
         <div
           className={classes.sliderWrapper}
-          ref={slider}
+          ref={sliderRef}
           style={{
             left: `${
-              (slider.current && slider.current.clientWidth * -currentSlide) ||
+              (sliderRef.current &&
+                sliderRef.current.clientWidth * -currentSlide) ||
               0
             }px`,
           }}
         >
-          <Slide
-            avatarURL="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1844&q=80"
-            title="Maxim"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nisi perspiciatis iste ullam suscipit illum."
-          />
+          {feedbacks.map((feedback: Feedback) => {
+            return (
+              <Slide
+                key={feedback.avatarURL}
+                avatarURL={feedback.avatarURL}
+                title={feedback.name}
+                text={feedback.text}
+              />
+            );
+          })}
         </div>
       </div>
       <div className={classes.buttons}>
-        <IconButton
-          aria-label="delete"
-          onClick={() => {
-            setCurrentSlide(0);
-          }}
-        >
-          <RadioButtonCheckedIcon color="primary" className={classes.button} />
-        </IconButton>
+        {Array.from(buttons).map((item, index) => {
+          return (
+            <IconButton
+              key={index}
+              aria-label="delete"
+              onClick={() => {
+                setCurrentSlide(index);
+              }}
+            >
+              <RadioButtonCheckedIcon
+                color={index === currentSlide ? "primary" : "inherit"}
+                className={classes.button}
+              />
+            </IconButton>
+          );
+        })}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography/Typography";
 import Avatar from "@material-ui/core/Avatar/Avatar";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography/Typography";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
       flex: "0 0 48%",
       marginRight: "4%",
       "&:nth-child(2n)": {
+        marginRight: 0,
+      },
+      [theme.breakpoints.down("xs")]: {
+        width: "100%",
+        flex: "1 0 100%",
         marginRight: 0,
       },
     },
