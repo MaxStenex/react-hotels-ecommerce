@@ -1,4 +1,4 @@
-import Background from "../assets/big_bg.jpg";
+import Background from "../../assets/big_bg.jpg";
 import { makeStyles, createStyles, Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
