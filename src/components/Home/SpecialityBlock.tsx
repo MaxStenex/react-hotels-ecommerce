@@ -43,19 +43,12 @@ const SpecialityBlock = () => {
           >
             Our Speciality
           </Typography>
-          <Typography
-            variant="subtitle1"
-            component="h2"
-            style={{ fontSize: 16 }}
-          >
+          <Typography variant="subtitle1" component="h2" style={{ fontSize: 16 }}>
             We offer free additional services to make your travel more enjoyable
           </Typography>
         </div>
         <Grid container spacing={3} justify="center" alignItems="stretch">
-          <SpecialityCard
-            title="Free wifi connection"
-            icon={<VoiceChatIcon />}
-          />
+          <SpecialityCard title="Free wifi connection" icon={<VoiceChatIcon />} />
           <SpecialityCard title="Security" icon={<SecurityIcon />} />
           <SpecialityCard title="Camera Coverage" icon={<VoiceChatIcon />} />
           <SpecialityCard title="Large Pool" icon={<PoolIcon />} />

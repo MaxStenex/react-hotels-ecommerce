@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
     slide: {
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       backgroundColor: "#e8e8e8",
       borderRadius: 20,
       padding: 20,
@@ -47,7 +47,7 @@ type Props = {
   text: string;
 };
 
-const Slide: React.FC<Props> = ({ avatarURL, title, text }) => {
+const Slide: React.FC<Props> = React.memo(({ avatarURL, title, text }) => {
   const classes = useStyles();
 
   return (
@@ -59,6 +59,6 @@ const Slide: React.FC<Props> = ({ avatarURL, title, text }) => {
       <Typography variant="body1">{text}</Typography>
     </div>
   );
-};
+});
 
 export default Slide;

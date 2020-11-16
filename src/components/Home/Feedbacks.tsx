@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     feedback: {
       padding: "65px 0px",
+      backgroundColor: "#f7f7f7",
     },
     feedbackHeader: {
       textAlign: "center",
@@ -35,9 +36,7 @@ const Feedbacks: React.FC = () => {
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false);
 
-  const feedbacks: Array<Feedback> = useSelector(
-    (state: RootState) => state.feedbacks
-  );
+  const feedbacks: Array<Feedback> = useSelector((state: RootState) => state.feedbacks);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -57,7 +56,7 @@ const Feedbacks: React.FC = () => {
       <Container maxWidth="md">
         <div className={classes.feedbackHeader}>
           <Typography variant="h4" className={classes.feedbackTitle}>
-            Clients Feedback
+            Clients Feedback About Us
           </Typography>
           <Typography variant="subtitle1" className={classes.feedbackTitle}>
             Some feedbacks from our clients

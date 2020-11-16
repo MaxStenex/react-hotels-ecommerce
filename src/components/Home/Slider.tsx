@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       position: "relative",
       transition: "all .4s ease",
+      alignItems: "flex-start",
     },
     buttons: {
       display: "flex",
@@ -60,9 +61,7 @@ const Slider: React.FC<Props> = ({ feedbacks }) => {
           ref={sliderRef}
           style={{
             left: `${
-              (sliderRef.current &&
-                sliderRef.current.clientWidth * -currentSlide) ||
-              0
+              (sliderRef.current && sliderRef.current.clientWidth * -currentSlide) || 0
             }px`,
           }}
         >
