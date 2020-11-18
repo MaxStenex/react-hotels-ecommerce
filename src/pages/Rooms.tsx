@@ -29,6 +29,19 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Rooms: React.FC = () => {
   const classes = useStyles();
+  const roomsPreviewRef = React.useRef<HTMLElement>(null);
+  const scrollButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    const scrollToRooms = () => {
+      roomsPreviewRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    scrollButtonRef.current?.addEventListener("click", scrollToRooms);
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      scrollButtonRef.current?.removeEventListener("click", scrollToRooms);
+    };
+  }, []);
 
   return (
     <section>
@@ -37,12 +50,12 @@ const Rooms: React.FC = () => {
         subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum esse neque, distinctio fuga aliquid dignissimos!"
         background={Background}
       >
-        <IconButton className={classes.arrowButtonWrapper}>
+        <IconButton ref={scrollButtonRef} className={classes.arrowButtonWrapper}>
           <KeyboardArrowDownIcon className={classes.arrowButton} />
         </IconButton>
       </PageTop>
       <Filter />
-      <RoomsPreview />
+      <RoomsPreview ref={roomsPreviewRef} />
     </section>
   );
 };

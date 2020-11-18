@@ -48,10 +48,10 @@ const Filter: React.FC = () => {
                 <MenuItem>
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={1}>One</MenuItem>
-                <MenuItem value={2}>Two</MenuItem>
-                <MenuItem value={3}>Three</MenuItem>
-                <MenuItem value={4}>Four</MenuItem>
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -62,12 +62,12 @@ const Filter: React.FC = () => {
                 <MenuItem>
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={1}>One</MenuItem>
-                <MenuItem value={2}>Two</MenuItem>
-                <MenuItem value={3}>Three</MenuItem>
-                <MenuItem value={4}>Four</MenuItem>
-                <MenuItem value={5}>Five</MenuItem>
-                <MenuItem value={6}>Six</MenuItem>
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
+                <MenuItem value={5}>5</MenuItem>
+                <MenuItem value={6}>6</MenuItem>
               </Select>
             </FormControl>
           </Grid>
