@@ -3,11 +3,11 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Slider } from "..";
+import Preloader from "../../assets/Preloader.gif";
 import { RootState } from "../../redux";
 import { getFeedbacks } from "../../redux/feedbacks";
 import { Feedback } from "../../types";
-import Preloader from "../../assets/Preloader.gif";
+import { Slider } from "./";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

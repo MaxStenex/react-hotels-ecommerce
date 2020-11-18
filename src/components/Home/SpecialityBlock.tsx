@@ -10,7 +10,7 @@ import PoolIcon from "@material-ui/icons/Pool";
 import SecurityIcon from "@material-ui/icons/Security";
 import VoiceChatIcon from "@material-ui/icons/VoiceChat";
 import React from "react";
-import { SpecialityCard } from "../";
+import { SpecialityCard } from "./";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

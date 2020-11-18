@@ -1,16 +1,16 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ['Roboto', 'sans-serif'].join(','),
+    fontFamily: ["Roboto", "sans-serif"].join(","),
     fontSize: 13,
   },
   overrides: {
     MuiCssBaseline: {
-      '@global': {
+      "@global": {
         a: {
-          textDecoration: 'none',
-          color: 'inherit',
+          textDecoration: "none",
+          color: "inherit",
         },
       },
     },

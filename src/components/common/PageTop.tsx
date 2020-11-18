@@ -1,4 +1,3 @@
-import Background from "../../assets/big_bg.jpg";
 import { makeStyles, createStyles, Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
@@ -9,13 +8,14 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     section: {
       color: "#fff",
-      background: `url(${Background}) no-repeat center center/cover`,
-      padding: "120px 0px 170px 0px",
+      padding: "160px 0px 200px 0px",
       position: "relative",
       textAlign: "center",
       textShadow: "2px 2px black",
+      height: 550,
       [theme.breakpoints.down("xs")]: {
         padding: "50px 0px 75px 0px",
+        height: "auto",
       },
     },
     shadow: {
@@ -43,14 +43,18 @@ const useStyles = makeStyles((theme: Theme) =>
 type PageTopProps = {
   title: string;
   subtitle: string;
+  background: string;
   children?: React.ReactNode;
 };
 
-const PageTop: React.FC<PageTopProps> = ({ title, subtitle, children }) => {
+const PageTop: React.FC<PageTopProps> = ({ title, subtitle, children, background }) => {
   const classes = useStyles();
 
   return (
-    <section className={classes.section}>
+    <section
+      className={classes.section}
+      style={{ background: `url(${background}) no-repeat center center/cover` }}
+    >
       <Grid className={classes.shadow}></Grid>
       <Container className={classes.container} maxWidth="md">
         <Typography variant="h3" component="h2" className={classes.title}>

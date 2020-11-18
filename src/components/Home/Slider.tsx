@@ -2,8 +2,8 @@ import IconButton from "@material-ui/core/IconButton";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import React from "react";
-import { Slide } from "../";
 import { Feedback } from "../../types";
+import { Slide } from "./";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
