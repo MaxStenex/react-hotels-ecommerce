@@ -3,8 +3,10 @@ import { PageTop } from "../components/common";
 import Background from "../assets/rooms_bg.jpg";
 import IconButton from "@material-ui/core/IconButton";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import { makeStyles, createStyles, Theme } from "@material-ui/core";
-import { Filter } from "../components/Rooms";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import createStyles from "@material-ui/core/styles/createStyles";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import { Filter, RoomsPreview } from "../components/Rooms";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -40,6 +42,7 @@ const Rooms: React.FC = () => {
         </IconButton>
       </PageTop>
       <Filter />
+      <RoomsPreview />
     </section>
   );
 };

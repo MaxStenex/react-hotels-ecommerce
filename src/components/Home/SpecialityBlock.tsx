@@ -1,6 +1,8 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import Container from "@material-ui/core/Container/Container";
 import Grid from "@material-ui/core/Grid/Grid";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography/Typography";
 import DirectionsWalkIcon from "@material-ui/icons/DirectionsWalk";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";

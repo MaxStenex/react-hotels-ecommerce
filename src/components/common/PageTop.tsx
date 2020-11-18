@@ -1,8 +1,10 @@
-import { makeStyles, createStyles, Theme } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import React from "react";
 import Container from "@material-ui/core/Container/Container";
 import Grid from "@material-ui/core/Grid/Grid";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

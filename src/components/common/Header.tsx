@@ -1,15 +1,17 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import PhoneIcon from "@material-ui/icons/Phone";
-import Grid from "@material-ui/core/Grid";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import EmailIcon from "@material-ui/icons/Email";
-import Toolbar from "@material-ui/core/Toolbar";
-import Logo from "../../assets/logo.png";
 import { Button } from "@material-ui/core";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import EmailIcon from "@material-ui/icons/Email";
+import PhoneIcon from "@material-ui/icons/Phone";
+import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -100,23 +102,12 @@ const Header: React.FC = () => {
               }}
               to="/home"
             >
-              <Button
-                className={classes.link}
-                variant="contained"
-                color="primary"
-              >
+              <Button className={classes.link} variant="contained" color="primary">
                 Home
               </Button>
             </Link>
-            <Link
-              style={{ color: "inherit", textDecoration: "none" }}
-              to="/rooms"
-            >
-              <Button
-                className={classes.link}
-                variant="contained"
-                color="primary"
-              >
+            <Link style={{ color: "inherit", textDecoration: "none" }} to="/rooms">
+              <Button className={classes.link} variant="contained" color="primary">
                 Rooms
               </Button>
             </Link>

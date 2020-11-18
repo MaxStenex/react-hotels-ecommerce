@@ -1,3 +1,5 @@
 import Filter from "./Filter";
+import RoomsPreview from "./RoomsPreview";
+import PreviewCard from "./PreviewCard";
 
-export { Filter };
+export { Filter, RoomsPreview, PreviewCard };

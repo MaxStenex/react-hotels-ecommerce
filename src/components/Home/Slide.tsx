@@ -1,5 +1,7 @@
 import Avatar from "@material-ui/core/Avatar/Avatar";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 

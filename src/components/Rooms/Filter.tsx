@@ -5,8 +5,10 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
-import { makeStyles, createStyles, Theme } from "@material-ui/core";
 import React from "react";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import createStyles from "@material-ui/core/styles/createStyles";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,17 +18,10 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: 70,
       padding: "15px 10px",
       borderRadius: 5,
-      [theme.breakpoints.down("xs")]: {
-        ".MuiContainer-root": {
-          backgroundColor: "red",
-        },
-      },
+      boxShadow: "0px 0px 10px black",
     },
     container: {
       marginTop: 30,
-      [theme.breakpoints.down("xs")]: {
-        padding: 0,
-      },
     },
     submitButton: {
       backgroundColor: "#F6A716",

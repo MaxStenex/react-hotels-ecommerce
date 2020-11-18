@@ -1,7 +1,9 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import Card from "@material-ui/core/Card/Card";
 import CardContent from "@material-ui/core/CardContent/CardContent";
 import Grid from "@material-ui/core/Grid/Grid";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import createStyles from "@material-ui/core/styles/createStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 

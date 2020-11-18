@@ -1,5 +1,7 @@
 import Button from "@material-ui/core/Button";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import createStyles from "@material-ui/core/styles/createStyles";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import React from "react";
 import { Link } from "react-router-dom";
 import Background from "../assets/home_bg.jpg";
