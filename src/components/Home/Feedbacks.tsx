@@ -6,8 +6,8 @@ import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Preloader from "../../assets/Preloader.gif";
-import { RootState } from "../../redux";
-import { getFeedbacks } from "../../redux/feedbacks";
+import { getFeedbacks } from "../../redux/feedbacks/actions";
+import { RootState } from "../../redux/rootReducer";
 import { Feedback } from "../../types";
 import { Slider } from "./";
 
