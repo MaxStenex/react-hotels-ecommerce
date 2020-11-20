@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PreviewCard } from ".";
-import previewImages from "../../assets/dbimages/preview";
 import { getAllRooms } from "../../redux/rooms/actions";
 import { RootState } from "../../redux/rootReducer";
 import { Room } from "../../types";
@@ -30,7 +29,7 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
               return (
                 <PreviewCard
                   key={room.id}
-                  image={previewImages[0]}
+                  image="https://i.ibb.co/tYKX1cv/1.jpg"
                   beds={room.beds}
                   price={room.price}
                   name={room.name}
