@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       padding: "10px 16px",
+      "&.MuiCardContent-root:last-child": {
+        paddingBottom: 10,
+      },
     },
     header: {
       marginBottom: 8,
@@ -58,23 +61,25 @@ const PreviewCard: React.FC<Props> = ({ image, price, name, peoples, beds }) => 
     <Grid item md={3} xs={6} className={classes.container}>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia image={image} className={classes.image} />
-          <CardContent className={classes.content}>
-            <Grid container justify="space-between" className={classes.header}>
-              <Typography variant="h5" component="h2" className={classes.name}>
-                {name}
+          <NavLink to="/room">
+            <CardMedia image={image} className={classes.image} />
+            <CardContent className={classes.content}>
+              <Grid container justify="space-between" className={classes.header}>
+                <Typography variant="h5" component="h2" className={classes.name}>
+                  {name}
+                </Typography>
+                <Typography variant="h5" color="primary">
+                  {price}$
+                </Typography>
+              </Grid>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Peoples: {peoples}
               </Typography>
-              <Typography variant="h5" color="primary">
-                {price}$
+              <Typography variant="body2" color="textSecondary" component="p">
+                Beds: {beds}
               </Typography>
-            </Grid>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Peoples: {peoples}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Beds: {beds}
-            </Typography>
-          </CardContent>
+            </CardContent>
+          </NavLink>
         </CardActionArea>
         <CardActions>
           <NavLink to="/room">

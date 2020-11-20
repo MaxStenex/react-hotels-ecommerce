@@ -25,7 +25,8 @@ export const setAllRooms = (rooms: Array<Room>): SetAllRoomsType => {
 
 export const getAllRooms = (): AppThunk => async (dispatch) => {
   try {
-    const rooms: Array<Room> = await instance.get("/rooms");
+    const response = await instance.get("/rooms");
+    const rooms: Array<Room> = await response.data;
     dispatch(setAllRooms(rooms));
   } catch (error) {
     console.log(error);
