@@ -7,7 +7,8 @@
       "totalPeoples": 4,
       "roomLevel": "medium",
       "name": "Deluxe Room",
-      "previewImage": "https://i.ibb.co/tYKX1cv/1.jpg"
+      "previewImage": "https://i.ibb.co/tYKX1cv/1.jpg",
+      "largeImage": "https://i.ibb.co/z2KmZzd/1.jpg"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "totalPeoples": 2,
       "roomLevel": "common",
       "name": "Twin Room",
-      "previewImage": "https://i.ibb.co/QD1g6YW/2.jpg"
+      "previewImage": "https://i.ibb.co/QD1g6YW/2.jpg",
+      "largeImage": "https://i.ibb.co/z8kHcN5/2.jpg"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "totalPeoples": 5,
       "roomLevel": "medium",
       "name": "Double-Double",
-      "previewImage": "https://i.ibb.co/k1LrVP7/3.jpg"
+      "previewImage": "https://i.ibb.co/k1LrVP7/3.jpg",
+      "largeImage": "https://i.ibb.co/c3YnHdv/3.jpg"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "totalPeoples": 6,
       "roomLevel": "luxury",
       "name": "Cabana",
-      "previewImage": "https://i.ibb.co/DLHMMBN/4.jpg"
+      "previewImage": "https://i.ibb.co/DLHMMBN/4.jpg",
+      "largeImage": "https://i.ibb.co/zbzS6q1/4.jpg"
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "totalPeoples": 6,
       "roomLevel": "luxury",
       "name": "Sico",
-      "previewImage": "https://i.ibb.co/1rcKZyf/5.jpg"
+      "previewImage": "https://i.ibb.co/1rcKZyf/5.jpg",
+      "largeImage": "https://i.ibb.co/HX1nTMZ/5.jpg"
     },
     {
       "id": 6,
@@ -52,8 +57,10 @@
       "totalPeoples": 3,
       "roomLevel": "luxury",
       "name": "Suite",
-      "previewImage": "https://i.ibb.co/x81XyVj/6.jpg"
+      "previewImage": "https://i.ibb.co/x81XyVj/6.jpg",
+      "largeImage": "https://i.ibb.co/TTQnhfW/6.jpg"
     },
+
     {
       "id": 7,
       "price": 340,
@@ -61,7 +68,8 @@
       "totalPeoples": 6,
       "roomLevel": "medium",
       "name": "Duplex Room",
-      "previewImage": "https://i.ibb.co/ZXz5z8q/7.jpg"
+      "previewImage": "https://i.ibb.co/ZXz5z8q/7.jpg",
+      "largeImage": "https://i.ibb.co/tqgRKkC/7.jpg"
     },
     {
       "id": 8,
@@ -70,7 +78,8 @@
       "totalPeoples": 4,
       "roomLevel": "common",
       "name": "Double Room",
-      "previewImage": "https://i.ibb.co/Hpc2Zhf/8.jpg"
+      "previewImage": "https://i.ibb.co/Hpc2Zhf/8.jpg",
+      "largeImage": "https://i.ibb.co/yX7P9kw/8.jpg"
     },
     {
       "id": 9,
@@ -79,7 +88,8 @@
       "totalPeoples": 4,
       "roomLevel": "common",
       "name": "Twin Double",
-      "previewImage": "https://i.ibb.co/sjYjfW1/9.jpg"
+      "previewImage": "https://i.ibb.co/sjYjfW1/9.jpg",
+      "largeImage": "https://i.ibb.co/kM5grSm/9.jpg"
     },
     {
       "id": 10,
@@ -88,7 +98,8 @@
       "totalPeoples": 2,
       "roomLevel": "common",
       "name": "Twin Double",
-      "previewImage": "https://i.ibb.co/L8Xf8Md/10.jpg"
+      "previewImage": "https://i.ibb.co/L8Xf8Md/10.jpg",
+      "largeImage": "https://i.ibb.co/0f4tPY4/10.jpg"
     },
     {
       "id": 11,
@@ -97,7 +108,8 @@
       "totalPeoples": 6,
       "roomLevel": "luxury",
       "name": "Penthouse Suite",
-      "previewImage": "https://i.ibb.co/Y7VMxQz/11.jpg"
+      "previewImage": "https://i.ibb.co/Y7VMxQz/11.jpg",
+      "largeImage": "https://i.ibb.co/TBV7DgP/11.jpg"
     },
     {
       "id": 12,
@@ -106,7 +118,8 @@
       "totalPeoples": 4,
       "roomLevel": "common",
       "name": "Hollywood Twin Room",
-      "previewImage": "https://i.ibb.co/DC5f35H/12.png"
+      "previewImage": "https://i.ibb.co/DC5f35H/12.png",
+      "largeImage": "https://i.ibb.co/pdJXhP6/12.jpg"
     },
     {
       "id": 13,
@@ -115,7 +128,8 @@
       "totalPeoples": 2,
       "roomLevel": "luxury",
       "name": "King Room",
-      "previewImage": "https://i.ibb.co/2vcqyW0/13.jpg"
+      "previewImage": "https://i.ibb.co/2vcqyW0/13.jpg",
+      "largeImage": "https://i.ibb.co/2nrxQb7/13.jpg"
     },
     {
       "id": 14,
@@ -124,7 +138,8 @@
       "totalPeoples": 3,
       "roomLevel": "common",
       "name": "Studio Room",
-      "previewImage": "https://i.ibb.co/R9hY8MT/14.jpg"
+      "previewImage": "https://i.ibb.co/R9hY8MT/14.jpg",
+      "largeImage": "https://i.ibb.co/sJxkBxk/14.jpg"
     },
     {
       "id": 15,
@@ -133,7 +148,8 @@
       "totalPeoples": 4,
       "roomLevel": "medium",
       "name": "Executive Suite",
-      "previewImage": "https://i.ibb.co/8KsPCnd/15.jpg"
+      "previewImage": "https://i.ibb.co/8KsPCnd/15.jpg",
+      "largeImage": "https://i.ibb.co/gFCXBb9/15.jpg"
     },
     {
       "id": 16,
@@ -142,7 +158,8 @@
       "totalPeoples": 6,
       "roomLevel": "medium",
       "name": "Junior Suite",
-      "previewImage": "https://i.ibb.co/vZWJRy0/16.jpg"
+      "previewImage": "https://i.ibb.co/vZWJRy0/16.jpg",
+      "largeImage": "https://i.ibb.co/dQCGS6V/16.jpg"
     }
   ],
   "feedbacks": [
