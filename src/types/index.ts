@@ -8,6 +8,15 @@ export type Feedback = {
   text: string;
 };
 
+export type Room = {
+  id: number;
+  price: number;
+  beds: number;
+  totalPeoples: number;
+  roomLevel: string;
+  name: string;
+};
+
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
