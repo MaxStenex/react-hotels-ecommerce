@@ -9,12 +9,11 @@ import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
-import { useHistory } from "react-router-dom";
-import queryString from "querystring";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilteredRooms } from "../../redux/rooms/actions";
 import { RootState } from "../../redux/rootReducer";
 import { Room } from "../../types";
+import { useQueryParam, NumberParam, StringParam } from "use-query-params";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,32 +42,39 @@ const useStyles = makeStyles((theme: Theme) =>
 const Filter: React.FC = () => {
   const classes = useStyles();
 
-  const history = useHistory();
-  // const searchString = queryString.parse(history.location.search.slice(1));
-
-  const [filter, setFilter] = React.useState({ beds: 0, peoples: 0, roomLevel: "" });
-
   const dispatch = useDispatch();
   const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.allRooms);
 
+  const [bedsParam, setBedsParam] = useQueryParam("beds", NumberParam);
+  const [peoplesParam, setPeoplesParam] = useQueryParam("peoples", NumberParam);
+  const [roomlevelParam, setRoomLevelParam] = useQueryParam("roomlevel", StringParam);
+
+  const [filter, setFilter] = React.useState({
+    beds: bedsParam || 0,
+    peoples: peoplesParam || 0,
+    roomLevel: roomlevelParam || "",
+  });
+
+  const onFilterChange = () => {
+    filter.beds === 0 ? setBedsParam(undefined) : setBedsParam(filter.beds);
+    filter.peoples === 0 ? setPeoplesParam(undefined) : setPeoplesParam(filter.peoples);
+    filter.roomLevel === ""
+      ? setRoomLevelParam(undefined)
+      : setRoomLevelParam(filter.roomLevel);
+  };
+
   React.useEffect(() => {
-    (async () => {
-      try {
-        dispatch(
-          setFilteredRooms(
-            rooms.filter((room: Room) => {
-              if (filter.beds && room.beds !== filter.beds) return false;
-              if (filter.peoples && room.totalPeoples !== filter.peoples) return false;
-              if (filter.roomLevel && room.roomLevel !== filter.roomLevel) return false;
-              return true;
-            })
-          )
-        );
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [filter, dispatch, rooms]);
+    dispatch(
+      setFilteredRooms(
+        rooms.filter((room: Room) => {
+          if (bedsParam && room.beds !== bedsParam) return false;
+          if (peoplesParam && room.totalPeoples !== peoplesParam) return false;
+          if (roomlevelParam && room.roomLevel !== roomlevelParam) return false;
+          return true;
+        })
+      )
+    );
+  }, [dispatch, rooms, bedsParam, peoplesParam, roomlevelParam]);
 
   return (
     <form>
@@ -85,7 +91,7 @@ const Filter: React.FC = () => {
                 }}
               >
                 <MenuItem value={0}>
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 <MenuItem value={1}>1</MenuItem>
                 <MenuItem value={2}>2</MenuItem>
@@ -105,7 +111,7 @@ const Filter: React.FC = () => {
                 }}
               >
                 <MenuItem value={0}>
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 <MenuItem value={1}>1</MenuItem>
                 <MenuItem value={2}>2</MenuItem>
@@ -127,11 +133,11 @@ const Filter: React.FC = () => {
                 }}
               >
                 <MenuItem value="">
-                  <em>None</em>
+                  <em>Any</em>
                 </MenuItem>
                 <MenuItem value="common">Common</MenuItem>
-                <MenuItem value="Medium">Medium</MenuItem>
-                <MenuItem value="Luxury">Luxury</MenuItem>
+                <MenuItem value="medium">Medium</MenuItem>
+                <MenuItem value="luxury">Luxury</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -141,6 +147,7 @@ const Filter: React.FC = () => {
               color="primary"
               className={classes.submitButton}
               fullWidth
+              onClick={onFilterChange}
             >
               Select
             </Button>

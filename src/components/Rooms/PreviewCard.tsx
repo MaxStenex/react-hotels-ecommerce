@@ -52,9 +52,17 @@ type Props = {
   name: string;
   peoples: number;
   beds: number;
+  roomLevel: string;
 };
 
-const PreviewCard: React.FC<Props> = ({ image, price, name, peoples, beds }) => {
+const PreviewCard: React.FC<Props> = ({
+  image,
+  price,
+  name,
+  peoples,
+  beds,
+  roomLevel,
+}) => {
   const classes = useStyles();
 
   return (
@@ -77,6 +85,9 @@ const PreviewCard: React.FC<Props> = ({ image, price, name, peoples, beds }) => 
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Beds: {beds}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {roomLevel.slice(0, 1).toUpperCase() + roomLevel.slice(1).toLowerCase()}
               </Typography>
             </CardContent>
           </NavLink>

@@ -34,6 +34,7 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
                   price={room.price}
                   name={room.name}
                   peoples={room.totalPeoples}
+                  roomLevel={room.roomLevel}
                 />
               );
             }
