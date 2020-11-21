@@ -15,6 +15,8 @@ export type Room = {
   totalPeoples: number;
   roomLevel: string;
   name: string;
+  previewImage: string;
+  largeImage: string;
 };
 
 export type AppThunk<ReturnType = void> = ThunkAction<

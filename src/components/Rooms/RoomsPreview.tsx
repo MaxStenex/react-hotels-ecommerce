@@ -25,11 +25,11 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           {rooms.map(
-            (room: Room, index: number): React.ReactNode => {
+            (room: Room): React.ReactNode => {
               return (
                 <PreviewCard
                   key={room.id}
-                  image="https://i.ibb.co/tYKX1cv/1.jpg"
+                  image={room.previewImage}
                   beds={room.beds}
                   price={room.price}
                   name={room.name}
