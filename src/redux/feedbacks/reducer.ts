@@ -1,14 +1,14 @@
 import { Feedback } from "../../types";
 import { FeedbacksActions, FeedbacksActionType } from "./actions";
 
-type StateType = Array<Feedback>;
+export type FeedbacksStateType = Array<Feedback>;
 
-const initialState: StateType = [];
+const initialState: FeedbacksStateType = [];
 
 export default function feedbacksReducer(
   state = initialState,
   action: FeedbacksActions
-): StateType {
+): FeedbacksStateType {
   switch (action.type) {
     case FeedbacksActionType.SET_FEEDBACKS: {
       return [...action.payload.feedbacks];

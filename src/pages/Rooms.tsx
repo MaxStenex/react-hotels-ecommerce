@@ -44,7 +44,7 @@ const Rooms: React.FC = () => {
   }, []);
 
   return (
-    <section>
+    <>
       <PageTop
         title="Our exclusive room service"
         subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum esse neque, distinctio fuga aliquid dignissimos!"
@@ -56,7 +56,7 @@ const Rooms: React.FC = () => {
       </PageTop>
       <Filter />
       <RoomsPreview ref={roomsPreviewRef} />
-    </section>
+    </>
   );
 };
 

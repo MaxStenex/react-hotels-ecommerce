@@ -12,7 +12,7 @@ type Props = {
 };
 
 const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
-  const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.allRooms);
+  const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.filteredRooms);
   const dispatch = useDispatch();
   React.useEffect(() => {
     (async () => {
@@ -21,7 +21,7 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
   }, [dispatch]);
 
   return (
-    <section ref={ref}>
+    <section style={{ paddingBottom: 20 }} ref={ref}>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           {rooms.map(

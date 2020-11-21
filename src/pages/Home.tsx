@@ -5,7 +5,7 @@ import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import React from "react";
 import { Link } from "react-router-dom";
 import Background from "../assets/home_bg.jpg";
-import { Footer, PageTop } from "../components/common";
+import { PageTop, Footer } from "../components/common";
 import { Feedbacks, SpecialityBlock } from "../components/Home";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <section>
+    <>
       <PageTop
         title="Get best travel offers, super rooms, meeting and more."
         subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed iure vero accusamus, eos laboriosam aut."
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       <SpecialityBlock />
       <Feedbacks />
       <Footer />
-    </section>
+    </>
   );
 };
 

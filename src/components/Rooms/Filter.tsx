@@ -9,6 +9,12 @@ import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import { useHistory } from "react-router-dom";
+import queryString from "querystring";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilteredRooms } from "../../redux/rooms/actions";
+import { RootState } from "../../redux/rootReducer";
+import { Room } from "../../types";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,6 +43,33 @@ const useStyles = makeStyles((theme: Theme) =>
 const Filter: React.FC = () => {
   const classes = useStyles();
 
+  const history = useHistory();
+  // const searchString = queryString.parse(history.location.search.slice(1));
+
+  const [filter, setFilter] = React.useState({ beds: 0, peoples: 0, roomLevel: "" });
+
+  const dispatch = useDispatch();
+  const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.allRooms);
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        dispatch(
+          setFilteredRooms(
+            rooms.filter((room: Room) => {
+              if (filter.beds && room.beds !== filter.beds) return false;
+              if (filter.peoples && room.totalPeoples !== filter.peoples) return false;
+              if (filter.roomLevel && room.roomLevel !== filter.roomLevel) return false;
+              return true;
+            })
+          )
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [filter, dispatch, rooms]);
+
   return (
     <form>
       <Container maxWidth="md" className={classes.container}>
@@ -44,8 +77,14 @@ const Filter: React.FC = () => {
           <Grid item sm={3} xs={6}>
             <FormControl variant="outlined" fullWidth>
               <InputLabel>Beds</InputLabel>
-              <Select label="Beds">
-                <MenuItem>
+              <Select
+                label="Beds"
+                value={filter.beds}
+                onChange={(evt: React.ChangeEvent<{ value: unknown }>) => {
+                  setFilter({ ...filter, beds: evt.target.value as number });
+                }}
+              >
+                <MenuItem value={0}>
                   <em>None</em>
                 </MenuItem>
                 <MenuItem value={1}>1</MenuItem>
@@ -58,8 +97,14 @@ const Filter: React.FC = () => {
           <Grid item sm={3} xs={6}>
             <FormControl variant="outlined" fullWidth>
               <InputLabel>Total People</InputLabel>
-              <Select label="Total People">
-                <MenuItem>
+              <Select
+                label="Total People"
+                value={filter.peoples}
+                onChange={(evt: React.ChangeEvent<{ value: unknown }>) => {
+                  setFilter({ ...filter, peoples: evt.target.value as number });
+                }}
+              >
+                <MenuItem value={0}>
                   <em>None</em>
                 </MenuItem>
                 <MenuItem value={1}>1</MenuItem>
@@ -74,8 +119,14 @@ const Filter: React.FC = () => {
           <Grid item sm={3} xs={6}>
             <FormControl variant="outlined" fullWidth>
               <InputLabel>Room Level</InputLabel>
-              <Select label="Room Level">
-                <MenuItem>
+              <Select
+                label="Room Level"
+                value={filter.roomLevel}
+                onChange={(evt: React.ChangeEvent<{ value: unknown }>) => {
+                  setFilter({ ...filter, roomLevel: evt.target.value as string });
+                }}
+              >
+                <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
                 <MenuItem value="common">Common</MenuItem>

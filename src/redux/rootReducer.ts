@@ -1,13 +1,10 @@
 import { combineReducers } from "redux";
-import { Feedback, Room } from "../types";
-import feedbacksReducer from "./feedbacks/reducer";
-import roomsReducer from "./rooms/reducer";
+import feedbacksReducer, { FeedbacksStateType } from "./feedbacks/reducer";
+import roomsReducer, { RoomsStateType } from "./rooms/reducer";
 
 export type RootState = {
-  feedbacks: Array<Feedback>;
-  rooms: {
-    allRooms: Array<Room>;
-  };
+  feedbacks: FeedbacksStateType;
+  rooms: RoomsStateType;
 };
 
 export const rootReducer = combineReducers({
