@@ -15,9 +15,7 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
   const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.filteredRooms);
   const dispatch = useDispatch();
   React.useEffect(() => {
-    (async () => {
-      await dispatch(getAllRooms());
-    })();
+    dispatch(getAllRooms());
   }, [dispatch]);
 
   return (

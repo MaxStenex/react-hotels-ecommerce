@@ -149,7 +149,7 @@ const Filter: React.FC = () => {
               fullWidth
               onClick={onFilterChange}
             >
-              Select
+              Search
             </Button>
           </Grid>
         </Grid>
