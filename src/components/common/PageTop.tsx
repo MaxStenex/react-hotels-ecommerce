@@ -44,12 +44,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type PageTopProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   background: string;
   children?: React.ReactNode;
 };
 
-const PageTop: React.FC<PageTopProps> = ({ title, subtitle, children, background }) => {
+const PageTop: React.FC<PageTopProps> = ({
+  title,
+  subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut provident, possimus rerum dicta sint dolore quas libero illo consequuntur magnam corporis nobis qui quo, quod voluptate",
+  children,
+  background,
+}) => {
   const classes = useStyles();
 
   return (
