@@ -53,6 +53,7 @@ type Props = {
   peoples: number;
   beds: number;
   roomLevel: string;
+  id: number;
 };
 
 const PreviewCard: React.FC<Props> = ({
@@ -62,6 +63,7 @@ const PreviewCard: React.FC<Props> = ({
   peoples,
   beds,
   roomLevel,
+  id,
 }) => {
   const classes = useStyles();
 
@@ -69,7 +71,7 @@ const PreviewCard: React.FC<Props> = ({
     <Grid item md={3} xs={6} className={classes.container}>
       <Card className={classes.card}>
         <CardActionArea>
-          <NavLink to="/room">
+          <NavLink to={`/rooms/${id}`}>
             <CardMedia image={image} className={classes.image} />
             <CardContent className={classes.content}>
               <Grid container justify="space-between" className={classes.header}>
@@ -93,7 +95,7 @@ const PreviewCard: React.FC<Props> = ({
           </NavLink>
         </CardActionArea>
         <CardActions>
-          <NavLink to="/room">
+          <NavLink to={`/rooms/${id}`}>
             <Button size="small" color="primary">
               View details
             </Button>

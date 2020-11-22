@@ -33,6 +33,7 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
                   name={room.name}
                   peoples={room.totalPeoples}
                   roomLevel={room.roomLevel}
+                  id={room.id}
                 />
               );
             }
