@@ -6,6 +6,7 @@ import { PreviewCard } from ".";
 import { getAllRooms } from "../../redux/rooms/actions";
 import { RootState } from "../../redux/rootReducer";
 import { Room } from "../../types";
+import { Preloader, Error404 } from "../common";
 
 type Props = {
   ref: React.Ref<HTMLElement | null>;
@@ -14,11 +15,20 @@ type Props = {
 const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
   const rooms: Array<Room> = useSelector((state: RootState) => state.rooms.filteredRooms);
   const dispatch = useDispatch();
+
+  const [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
-    dispatch(getAllRooms());
+    (async () => {
+      await dispatch(getAllRooms());
+      setLoading(false);
+    })();
   }, [dispatch]);
 
-  return (
+  if (!loading && rooms.length === 0) {
+    return <Error404 />;
+  }
+
+  return !loading ? (
     <section style={{ paddingBottom: 20 }} ref={ref}>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
@@ -41,6 +51,8 @@ const RoomPreview: React.FC<Props> = React.forwardRef((props, ref) => {
         </Grid>
       </Container>
     </section>
+  ) : (
+    <Preloader />
   );
 });
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Room } from "../types";
 import { instance } from "../utils/api";
 import { withRouter, RouteComponentProps, NavLink } from "react-router-dom";
-import { PageTop } from "../components/common";
+import { PageTop, Preloader } from "../components/common";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -125,7 +125,7 @@ const RoomPage: React.FC<Props> = ({ match }) => {
       </Container>
     </>
   ) : (
-    <span>Loading...</span>
+    <Preloader />
   );
 };
 
