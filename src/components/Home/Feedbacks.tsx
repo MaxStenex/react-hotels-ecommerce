@@ -5,10 +5,10 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography/Typography";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Preloader from "../../assets/Preloader.gif";
 import { getFeedbacks } from "../../redux/feedbacks/actions";
 import { RootState } from "../../redux/rootReducer";
 import { Feedback } from "../../types";
+import { Preloader } from "../common";
 import { Slider } from "./";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,12 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
     feedbackTitle: {
       fontWeight: 700,
       marginBottom: 10,
-    },
-    preloader: {
-      display: "flex",
-      width: "250px",
-      height: "250px",
-      margin: "0 auto",
     },
   })
 );
@@ -64,11 +58,7 @@ const Feedbacks: React.FC = () => {
             Some feedbacks from our clients
           </Typography>
         </div>
-        {loading ? (
-          <img src={Preloader} alt="Loading..." className={classes.preloader} />
-        ) : (
-          <Slider feedbacks={feedbacks} />
-        )}
+        {loading ? <Preloader /> : <Slider feedbacks={feedbacks} />}
       </Container>
     </section>
   );
